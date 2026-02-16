@@ -1,0 +1,101 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter build windows
+
+## exception
+
+PathExistsException: PathExistsException: Cannot create link, path = 'C:\Users\Welcome\Downloads\lost_found_app-1\lost_found_app\windows\flutter\ephemeral\.plugin_symlinks\cloud_firestore' (OS Error: Cannot create a file when that file already exists, errno = 183)
+
+```
+#0      _Link.throwIfError (dart:io/link.dart:358:7)
+#1      _Link.createSync (dart:io/link.dart:276:5)
+#2      ForwardingLink.createSync (package:file/src/forwarding/forwarding_link.dart:20:16)
+#3      ForwardingLink.createSync (package:file/src/forwarding/forwarding_link.dart:20:16)
+#4      _createPlatformPluginSymlinks (package:flutter_tools/src/flutter_plugins.dart:1143:12)
+#5      createPluginSymlinks (package:flutter_tools/src/flutter_plugins.dart:1060:5)
+#6      buildWindows (package:flutter_tools/src/windows/build_windows.dart:82:3)
+<asynchronous suspension>
+#7      BuildWindowsCommand.runCommand (package:flutter_tools/src/commands/build_windows.dart:72:5)
+<asynchronous suspension>
+#8      FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1590:27)
+<asynchronous suspension>
+#9      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#10     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#11     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:496:9)
+<asynchronous suspension>
+#12     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#13     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:431:5)
+<asynchronous suspension>
+#14     FlutterCommandRunner.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:307:33)
+<asynchronous suspension>
+#15     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:104:11)
+<asynchronous suspension>
+#16     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#17     main (package:flutter_tools/executable.dart:103:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel stable, 3.41.0, on Microsoft Windows [Version
+    10.0.26200.7840], locale en-IN) [274ms]
+    [32m•[39m Flutter version 3.41.0 on channel stable at D:\flutter
+    [32m•[39m Upstream repository https://github.com/flutter/flutter.git
+    [32m•[39m Framework revision 44a626f4f0 (6 days ago), 2026-02-10 10:16:12
+      -0800
+    [32m•[39m Engine revision 3452d735bd
+    [32m•[39m Dart version 3.11.0
+    [32m•[39m DevTools version 2.54.1
+    [32m•[39m Feature flags: enable-web, enable-linux-desktop,
+      enable-macos-desktop, enable-windows-desktop, enable-android,
+      enable-ios, cli-animations, enable-native-assets,
+      omit-legacy-version-file, enable-lldb-debugging,
+      enable-uiscene-migration
+
+[32m[✓][39m Windows Version (11 Home Single Language 64-bit, 25H2, 2009)
+    [1,329ms]
+
+[31m[✗][39m Android toolchain - develop for Android devices [144ms]
+    [31m✗[39m Unable to locate Android SDK.
+      Install Android Studio from:
+      https://developer.android.com/studio/index.html
+      On first launch it will assist you in installing the Android SDK
+      components.
+      (or visit https://flutter.dev/to/windows-android-setup for
+      detailed instructions).
+      If the Android SDK has been installed to a custom location, please
+      use
+      `flutter config --android-sdk` to update to that location.
+
+
+[32m[✓][39m Chrome - develop for the web [124ms]
+    [32m•[39m Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[32m[✓][39m Visual Studio - develop Windows apps (Visual Studio Community 2022
+    17.14.16) [123ms]
+    [32m•[39m Visual Studio at C:\Program Files\Microsoft Visual
+      Studio\2022\Community
+    [32m•[39m Visual Studio Community 2022 version 17.14.36518.9
+    [32m•[39m Windows 10 SDK version 10.0.26100.0
+
+[32m[✓][39m Connected device (3 available) [72ms]
+    [32m•[39m Windows (desktop) • windows • windows-x64    • Microsoft Windows
+      [Version 10.0.26200.7840]
+    [32m•[39m Chrome (web)      • chrome  • web-javascript • Google Chrome
+      144.0.7559.133
+    [32m•[39m Edge (web)        • edge    • web-javascript • Microsoft Edge
+      144.0.3719.115
+
+[32m[✓][39m Network resources [339ms]
+    [32m•[39m All expected network resources are available.
+
+[33m![39m Doctor found issues in 1 category.
+```
